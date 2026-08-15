@@ -2,7 +2,7 @@ import streamlit as st
 import cv2
 import numpy as np
 import mediapipe as mp
-from mediapipe.python.solutions import drawing_utils, pose
+from mediapipe import solutions
 import tempfile
 import time
 import base64
@@ -71,8 +71,8 @@ from exercises.glute_bridge    import glute_bridge_detection
 st.set_page_config(page_title="FITKIT - AI Fitness Coach", layout="wide")
 
 # Initialize MediaPipe
-mp_drawing = drawing_utils
-mp_pose    = pose
+mp_drawing = solutions.drawing_utils
+mp_pose = solutions.pose
 drawing_spec = mp_drawing.DrawingSpec(thickness=2, circle_radius=1)
 pose = mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5)
 
