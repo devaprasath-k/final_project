@@ -2,7 +2,10 @@ import streamlit as st
 import cv2
 import numpy as np
 import mediapipe as mp
-from mediapipe import solutions
+from mediapipe.framework.formats import landmark_pb2
+from mediapipe.python.solutions import drawing_utils
+from mediapipe.python.solutions import pose
+
 import tempfile
 import time
 import base64
